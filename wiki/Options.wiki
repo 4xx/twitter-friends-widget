@@ -1,0 +1,170 @@
+#labels Featured,Phase-Implementation
+Plugin supports many arguments. All arguments are optional except for your <b>Twitter 
+username</b>!<br />
+<br />
+<table class="SmallTable" style="border-collapse: collapse;" border="1" cellpadding="2" cellspacing="0">
+	<tr>
+		<th>Option</th>
+		<th>Description</th>
+		<th>Default value</th>
+	</tr>
+	<tr>
+		<td>debug</td>
+		<td>Set debug to <b>1</b> while you test to display errors, then remove 
+		it when you done.</td>
+		<td><b>0</b></td>
+	</tr>
+	<tr>
+		<td>username</td>
+		<td>your Twitter username!</td>
+		<td><b>''</b></td>
+	</tr>
+	<tr>
+<td> friends </td>
+<td>
+by default set to <b>0</b> to load followers. set it to <b>1</b> to load friends (whom you follow)
+</td>
+<td><b>0</b></td>
+</tr>
+	<tr>
+		<td colspan="3">
+		<p align="center"><b>Friends Pictures</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td>users</td>
+		<td>Number of visible friends' pictures on each swap. Note that Twitter 
+		will return your latest 100 Followers/Friends. you can choose to show a 
+		smaller number of pictures at a time. it's recommend to show a number that 
+		fits to your widget space and 100 is dividable by it.</td>
+		<td><b>20</b></td>
+	</tr>
+	<tr>
+		<td>loop</td>
+		<td>loop friends pictures animation or not. set it to <b>1</b> to loop or
+		<b>0</b> to disable.</td>
+		<td><b>0</b></td>
+	</tr>
+	<tr>
+		<td>user_link</td>
+		<td>by default, friends pictures will link to their Twitter page. your can 
+		link it to their homepage by setting this to <b>1.</b></td>
+		<td><b>0</b></td>
+	</tr>
+	<tr>
+		<td>user_image</td>
+		<td>Pictures are 48x48 pixels. you can scale it down to 32 pixels for example.</td>
+		<td><b>48</b></td>
+	</tr>
+	<tr>
+		<td>user_animate</td>
+		<td>Customize picture entry animation type. available values are <b>'width'</b>,
+		<b>'height'</b>, <b>'opacity'</b></td>
+		<td><b>'opacity'</b></td>
+	</tr>
+	<tr>
+		<td>user_change</td>
+		<td>Entry transition time of a picture in milliseconds.</td>
+		<td><b>200</b></td>
+	</tr>
+	<tr>
+		<td>user_swap</td>
+		<td>Time in milliseconds to wait before displaying the next (users) set. 
+		This delay is used only when tweets are disabled. otherwise swapping happens 
+		after displaying current visible friends tweets. </td>
+		<td><b>5000</b></td>
+	</tr>
+	<tr>
+		<td>user_append</td>
+		<td>By default friends picture is added by the end of pictures list. to 
+		insert picture at the beginning of list set this to <b>0</b></td>
+		<td><b>1</b></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<p align="center"><b>Profile Header</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td>header</td>
+		<td>Show your Twitter profile information like your picture, profile link, 
+		friends/followers count. <br />
+		may contain any HTML code or these optional variables which will be replaced 
+		with actual values.<br />
+		<b>{{{_tp_}}}</b> : Twitter profile Link.<br />
+		<b>{{{_ti_}}}</b> : Twitter picture.<br />
+		<b>{{{_fo_}}}</b> : followers count.<br />
+		<b>{{{_fr_}}}</b> : friends count.<br />
+		<br />
+		Ex:<b> {{{'<a href=\'_tp_\'></a><img src=\'_ti_\'/></a><h2></h2>_fo_ Awsome Follwers!</h2>'}}}
+		<br />
+		</b>Notice how single quotes in HTML was replaced with <b>\'<br />
+		</b>If you don't leave this option empty, widget will make an extra call 
+		to the twitter API to load your profile information.</td>
+		<td><b>''</b></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+		<p align="center"><b>Friends' Tweets</b></p>
+		</td>
+	</tr>
+	<tr>
+		<td>tweet</td>
+		<td>Set this to <b>1 </b>to display friends' tweets at widget footer. Tweets 
+		will also appear as a tool tip when hovering on a friend picture.</td>
+		<td><b>0</b></td>
+	</tr>
+	<tr>
+		<td>tweet_avatar</td>
+		<td>you can disable friend picture not to appear on his/her tweet by setting 
+		this to <b>0</b></td>
+		<td><b>1</b></td>
+	</tr>
+	<tr>
+		<td>tweet_author</td>
+		<td>Show tweet author name or not. you might set it to <b>1</b> to show 
+		the author name.</td>
+		<td><b>0</b></td>
+	</tr>
+	<tr>
+		<td>tweet_date</td>
+		<td>Show tweet date or not. set it to <b>0</b> to hide.</td>
+		<td><b>1</b></td>
+	</tr>
+	<tr>
+		<td>tweet_source</td>
+		<td>Show tweet source or not (ex: web, twhirl). set it to <b>0</b> to hide.</td>
+		<td><b>1</b></td>
+	</tr>
+	<tr>
+		<td>tweet_image</td>
+		<td>by default tweet avatar image is 48x48. You may scale it down by setting 
+		it to something like <b>32</b></td>
+		<td><b>48</b></td>
+	</tr>
+	<tr>
+		<td>tweet_stay</td>
+		<td>Time in milliseconds for a tweet to be shown.</td>
+		<td><b>5000</b></td>
+	</tr>
+	<tr>
+		<td>tweet_change</td>
+		<td>Entry/exit transition time of a tweet in milliseconds. </td>
+		<td><b>200</b></td>
+	</tr>
+	<tr>
+		<td>tweet_animate</td>
+		<td>What to animate for tweet transition. by default is set to 'opacity' 
+		to fade tweets in. <br />
+		possible values are <b>'opacity'</b>, <b>'height'</b>, <b>'width'</b>,
+		<b>'fontSize', 'lineHeight'</b>. (case-sensitive)</td>
+		<td><b>'opacity'</b></td>
+	</tr>
+	<tr>
+		<td>info</td>
+		<td>This option is an HTML link to my homepage. <b>You can remove it</b> 
+		by setting this option to empty string (''), but I'll appreciate it if you 
+		attribute/link-back to me elsewhere on your website.</td>
+		<td><b>Plugin Link!</b></td>
+	</tr>
+</table>
