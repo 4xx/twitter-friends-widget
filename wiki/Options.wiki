@@ -1,4 +1,4 @@
-#labels Featured,Phase-Implementation
+#labels Featured
 Plugin supports many arguments. All arguments are optional except for your <b>Twitter 
 username</b>!<br />
 <br />
@@ -96,7 +96,7 @@ by default set to <b>0</b> to load followers. set it to <b>1</b> to load friends
 		<b>{{{_fo_}}}</b> : followers count.<br />
 		<b>{{{_fr_}}}</b> : friends count.<br />
 		<br />
-		Ex:<b> {{{'<a href=\'_tp_\'></a><img src=\'_ti_\'/></a><h2></h2>_fo_ Awsome Follwers!</h2>'}}}
+		Ex:<b> {{{'<a href=\'_tp_\'></a><img src=\'_ti_\'/></a><h2></h2>_fo_ Awesome Follwers!</h2>'}}}
 		<br />
 		</b>Notice how single quotes in HTML was replaced with <b>\'<br />
 		</b>If you don't leave this option empty, widget will make an extra call 
