@@ -1,8 +1,12 @@
 body{
 	font-family:arial;
 	font-size:12px;
+	padding-bottom:100px;
 }
 
+H1{
+	color:#2F3032
+}
 #footer{
 	bottom:0;
 	height:50px;
