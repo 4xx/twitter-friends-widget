@@ -39,6 +39,14 @@ by default set to <b>0</b> to load followers. set it to <b>1</b> to load friends
 		fits to your widget space and 100 is dividable by it.</td>
 		<td><b>20</b></td>
 	</tr>
+        <tr>
+		<td>users_max</td>
+		<td>Twitter will return your latest 100 Followers/Friends or less. you can choose to show a 
+		smaller number of pictures at all (ex: 80).
+<br/> If you set this the same as 'users' then no swapping happens.
+</td>
+		<td><b>100</b></td>
+	</tr>
 	<tr>
 		<td>loop</td>
 		<td>loop friends pictures animation or not. set it to <b>1</b> to loop or
