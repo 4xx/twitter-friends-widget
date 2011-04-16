@@ -9,7 +9,7 @@ H1{
 }
 #footer{
 	bottom:0;
-	height:50px;
+	height:68px;
 	left:0;
 	position:fixed;
 	text-align:center;
@@ -17,14 +17,20 @@ H1{
 	z-index:100;
 	background:#2F3032;
 }
-
+#footer .ad{
+	width:468px;
+	height:60px;
+	overflow:hidden;
+	float:right;
+	margin:4px 5px;
+}
 #footer a.icon{
 	background:url(icon.gif) no-repeat;
 	display:block;
 	float:left;
 	width:48px;
 	height:48px;
-	margin:0 10px 0 0;
+	margin:10px 10px 0 0;
 }
 
 #footer a.link{
