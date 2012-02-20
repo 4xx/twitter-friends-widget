@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+<title>Twitter Friends & Followers Widget v2.0 - Setup</title>
+<link href="demo.css" rel="stylesheet" type="text/css"/>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://twitter-friends-widget.googlecode.com/files/jquery.twitter-friends-2.0.min.js"></script>
+
+<script type="text/javascript" src="jquery.validate.min.js"></script>
+<script type="text/javascript" src="setup-v1.0.min.js"></script>
+</head>
+<body>
+
+<h1 id="heading">Twitter Friends & Followers Widget v2.0 - Setup</h1>
+
+<div>Customize widget options, and this wizard will demonstrate and generate the code for you.<br/>
+Click "Add to Blogger" to get redirected to Google Blogger and have code placed in a HTML/JS page element.
+</div>
+<div class="clear"></div>
+
+<div class="left">
+	<div id="setup_set" class="set">
+	<form id="setup_form" action="" method="get">
+		<h3>Options</h3>
+		<div class="clear"></div>
+		
+		<div class='info'>Leave inputs as is to use defaults. more info on <a href="http://code.moretechtips.net/twitter-friends-widget/v2/options/">widget options</a></div>
+		
+		<ul id="setup">
+			<li>
+				<label>username</label>
+				<span><input type="text" id="username" name="username" value="" class="required"/></span>
+				<i>Set your Twitter username.</i>
+			</li>
+			<li>
+				<label>style theme</label>
+				<span>
+					<select id="widget_style" name="widget_style">
+						<option value="http://twitter-friends-widget.googlecode.com/svn/v2/light.css">light </option>
+						<option value="http://twitter-friends-widget.googlecode.com/svn/v2/dark.css">dark</option>
+						<option value="">None!</option>
+					</select>
+				</span>
+				<i></i>
+			</li>
+			
+			<li>
+				<label>followers or friends?</label>
+				<span>
+					<select id="friends" name="friends">
+						<option value="0">followers (default)</option>
+						<option value="1">friends</option>
+					</select>
+				</span>
+				<i></i>
+			</li>
+			<li>
+				<label>widget width (px)</label>
+				<span><input type="text" id="width" name="width" value="0" class="digits required"/></span>
+				<i>You can set width of widget container in pixels, Or set <b>0</b> for auto width..</i>
+			</li>
+			<li>
+				<label>Widget Loading </label>
+				<span>
+					<select id="widget_load" name="widget_load">
+						<option value="">Auto - Options in HTML comment</option>
+						<option value="html5">Auto - Options in HTML5 data attribute</option>
+						<option value="jquery">jQuery method</option>
+					</select>
+				</span>
+				<i>
+				Auto-load any number of div elements with "twitter-friends" class and place options in a HTML comment or HTML5 data attribute. 
+				Also, you can use a jQuery method call.
+				</i>
+			</li>
+			
+			<li>
+				<label class="head">Friends/Followers Pictures</label>
+				<i></i>
+			</li>
+
+			<li class="tags1">
+				<label>users max.</label>
+				<span><input type="text" id="users_max" name="users_max" class="{validate:{required:1,digits:1, range:[0,100]}}" value="20" /></span>
+				<i>Twitter will return your latest 100 Followers/Friends or less. you 
+				can choose to show a smaller number of pictures (ex: 80).</i>
+			</li>
+			<li>
+				<label>picture width/height</label>
+				<span><input type="text" id="user_image" name="user_image" value="48" class="required digits"/></span>
+				<i>Pictures are 48x48 pixels. you can scale it down to 32 pixels for example.</i>
+			</li>
+		
+			<li>
+				<label>picture animation</label>
+				<span>
+					<select id="user_animate" name="user_animate">
+						<option value="opacity">opacity (default)</option>
+						<option value="width">width</option>
+						<option value="height">height</option>
+						<option value="">No animation!</option>
+					</select>
+				</span>
+				<i>Customize picture entry animation type. also, you can disable animating users pictures and display them at once.</i>
+			</li>
+			<li>
+				<label>Animation delay</label>
+				<span><input type="text" id="user_change" name="user_change" value="100" class="required digits"/></span>
+				<i>transition time of a picture in milliseconds.</i>
+			</li>
+			<li>
+				<label>loop animation?</label>
+				<span>
+					<select id="loop" name="loop">
+						<option value="0">No (default)</option>
+						<option value="1">yes</option>
+					</select>
+				</span>
+				<i>loop pictures animation or not.</i>
+			</li>
+			<li>
+				<label>Loop delay</label>
+				<span><input type="text" id="user_swap" name="user_swap" value="2000" class="required digits"/></span>
+				<i>Time in milliseconds to wait before animating pictures again. 
+				This delay is used only when tweets are disabled. otherwise swapping happens 
+				after tweets animation ends.</i>
+			</li>
+			<li>
+				<label>container height (px)</label>
+				<span><input type="text" id="users_height" name="users_height" value="0" class="digits required"/></span>
+				<i>Set the height of pictures container to something like <b>100</b> pixels, to prevent flickering while pictures are added. Or set <b>0</b> for auto.</i>
+			</li>
+			<li>
+				<label>show user name?</label>
+				<span>
+					<select id="user_name" name="user_name">
+						<option value="1">yes (default)</option>
+						<option value="0">No</option>
+					</select>
+				</span>
+				<i>show user name under picture or not.</i>
+			</li>
+			<li>
+				<label>random pictures?</label>
+				<span>
+					<select id="users_random" name="users_random">
+						<option value="0">No (default)</option>
+						<option value="1">yes</option>
+					</select>
+				</span>
+				<i>You can show random subset of the returned pictures each time the widget is loaded.</i>
+			</li>
+			<li>
+				<label>reversed pictures?</label>
+				<span>
+					<select id="users_reverse" name="users_reverse">
+						<option value="0">No (default)</option>
+						<option value="1">yes</option>
+					</select>
+				</span>
+				<i>reverse the order of pictures returned?</i>
+			</li>
+			<li>
+				<label>Append pictures?</label>
+				<span>
+					<select id="user_append" name="user_append">
+						<option value="1">yes (default)</option>
+						<option value="0">No </option>
+					</select>
+				</span>
+				<i>By default user picture is appended by the end of pictures list. you can   
+				insert picture at the beginning of list.</i>
+			</li>
+			
+			
+			<li>
+				<label>link to homepage?</label>
+				<span>
+					<select id="user_link" name="user_link">
+						<option value="0">No (default)</option>
+						<option value="1">yes</option>
+					</select>
+				</span>
+				<i>by default, friends pictures will link to their Twitter profile. however, your can 
+				link it to their homepage.</i>
+			</li>
+			
+			
+			<li>
+				<label class="head">Profile</label>
+				<i></i>
+			</li>
+			<li>
+				<label>Show Profile?</label>
+				<span>
+					<select id="header" name="header">
+						<option value="1">yes (default)</option>
+						<option value="0">No </option>
+					</select>
+				</span>
+				<i></i>
+			</li>
+			<li>
+				<label>container height (px)</label>
+				<span><input type="text" id="header_height" name="header_height" value="0" class="digits required"/></span>
+				<i>you can set the height of profile container to something like <b>60</b> pixels, or set <b>0</b> for auto.</i>
+			</li>
+			<li>
+				<label>profile HTML template </label>
+				<span><input type="text" id="header_html" name="header_html" value="" class=""/></span>
+				<i>By default, widget will display your name and picture as in 
+				demos, but you can customize by setting this option with HTML template.
+				<br/>
+				HTML code may contain any of these optional variables which will be replaced 
+				with actual values.<br />
+				<b>_tp_</b> : Twitter profile Link.<br />
+				<b>_ti_</b> : Twitter picture.<br/>
+				<b>_ts_</b> : your Twitter username.<br/>
+				<b>_tn_</b> : your name.<br />
+				<b>_fo_</b> : followers count.<br />
+				<b>_fr_</b> : friends count.
+				</i>
+			</li>
+			
+			<li>
+				<label class="head">Tweets</label>
+				<i></i>
+			</li>
+			
+			<li>
+				<label>Show tweets?</label>
+				<span>
+					<select id="tweet" name="tweet">
+						<option value="0">No (default)</option>
+						<option value="1">yes</option>
+					</select>
+				</span>
+				<i>You can display friends/followers tweets at widget footer. Tweets 
+				will also appear as a tool tip when hovering on a user picture.</i>
+			</li>
+			<li>
+				<label>container height (px)</label>
+				<span><input type="text" id="tweet_height" name="tweet_height" value="0" class="digits required"/></span>
+				<i>You can set the height of tweets container to something like <b>50</b> pixels to prevent flickering while tweets are animated. Or set <b>0</b> for auto.</i>
+			</li>
+	 		<li>
+				<label>show picture?</label>
+				<span>
+					<select id="tweet_avatar" name="tweet_avatar">
+						<option value="1">yes (default)</option>
+						<option value="0">No </option>
+					</select>
+				</span>
+				<i>Show/hide user picture in tweets.</i>
+			</li>
+			<li>
+				<label>picture width/height</label>
+				<span><input type="text" id="tweet_image" name="tweet_image" value="48" class="required digits" maxlength="4"/></span>
+				<i>Pictures are 48x48 pixels. you can scale it down to 32 pixels for example.</i>
+			</li>
+			
+			<li>
+				<label>transition delay</label>
+				<span><input type="text" id="tweet_change" name="tweet_change" value="200" class="required digits" maxlength="11"/></span>
+				<i>tweet transition time of in milliseconds.</i>
+			</li>
+			<li>
+				<label>show delay</label>
+				<span><input type="text" id="tweet_stay" name="tweet_stay" value="5000" class="required digits" maxlength="11"/></span>
+				<i>Time in milliseconds for a tweet to be shown.</i>
+			</li>
+			
+			<li>
+				<label>Show user name?</label>
+				<span>
+					<select id="tweet_author" name="tweet_author">
+						<option value="1">yes (default)</option>
+						<option value="0">No</option>
+					</select>
+				</span>
+				<i>Show tweet author name or not.</i>
+			</li>
+			<li>
+				<label>tweet animation</label>
+				<span>
+					<select id="tweet_animate" name="tweet_animate">
+						<option value="opacity">opacity (default)</option>
+						<option value="width">width</option>
+						<option value="height">height</option>
+						<option value="fontSize">font-size</option>
+						<option value="lineHeight">line-height</option>
+						
+					</select>
+				</span>
+				<i>Customize picture entry animation type. also, you can disable animating users pictures and display them at once.</i>
+			</li>
+			
+		</ul>
+		
+		<div class="buttons">
+			<input type="reset" value="Reset" class="reset" />
+			<input type="submit" value="Update Demo &amp; Code" class="submit" />
+		</div>
+		
+	</form>	
+	</div>
+	
+	<div id="code_set" class="set">
+	
+		<form method="post" action="http://www.blogger.com/add-widget" style="display:inline">
+			<div class="inline"><input type="submit" value="Add To Blogger" class="blogger-add" /></div>
+			
+			<h3>Code </h3>
+			<div class="info">Copy and paste into a HTML/JavaScript Gadget under Page Elements. 
+			Or click "Add to blogger" to get code copied to your blog.</div>
+			<div class="clear"></div>
+			
+			<div>
+				<textarea id="code" name="widget.content" rows="5" cols="80" readonly="readonly" wrap="off"></textarea>
+			
+				<input type="hidden" name="widget.title" value=""/>
+				<input type="hidden" name="infoUrl" value="http://www.moretechtips.net/"/>
+				<input type="hidden" name="widget.template" value="&lt;data:content/&gt;" />
+			</div>
+		</form>
+
+	</div>
+</div>
+
+<div class="right">
+	<div id="demo_set" class="set">
+		<h3>Demo</h3>
+		<div class="clear"></div>
+		<div class='info'>  </div>
+		<div id="demo"></div>
+		
+	</div>
+</div>
+<div class="clear"></div>
+
+
+
+<div id="note_set" class="set">
+	<h3>Notes </h3>
+	
+<ul>
+<li>Javascript files -jQuery library & Widget- should be included in that order. Each file only needs to exists one time on a page regardless of how many widgets you have on that page. </li>
+<li>You can include the Javascript files at &lt;head&gt; section or by the end of the page.</li>
+<li>When setting options in HTML5 attribute, you should escape single-quotes with backslash in options values.<br/> 
+so, you would write <span class="code">'John\'s Post'</span> instead of <span class="code">'John's Post'</span>. <br/>
+And escape double-quotes like this <span class="code">'say &amp;quot;hi&amp;quot;'</span> instead of <span class="code">'say "hi"'</span>.</li>
+<li>If you place options in HTML comment, you should escape single-quotes as before. 
+And put a backslash between any 2 consecutive dashes like this <span class="code">'John -\- Post'</span>
+ instead of <span class="code">'John -- Post'</span>.</li>
+<li>Also, If you place options in HTML comment and <b>embed code in Blogger template</b>, 
+you need to escape the HTML comment like this:<br/>
+<pre>
+<b>&amp;lt;!--</b> {
+  username:'mike_more'
+  ,...
+} <b>--&amp;gt;</b>
+</pre>
+</li>
+<li>Plugin was also tested to work with jQuery 1.2.6 or later.</li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+<div id="footer">
+	<div class='ad'>
+		<script type="text/javascript">
+		//<![CDATA[
+		google_ad_client = "pub-9464686146570738";google_ad_slot = "6604226947";google_ad_width = 468;google_ad_height = 60;
+		//]]>
+		</script>
+		<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+	</div>
+	
+	<a class="more-icon" href="http://www.moretechtips.net/" title="More Tech Tips!"></a>
+	
+	<a class="link" href="http://www.moretechtips.net/">Back to post</a>
+	
+	<div class='social-footer'>
+		
+		<a class='twitter-button popup share-button' href='https://twitter.com/intent/tweet?url=http://www.moretechtips.net/&amp;via=mike_more&amp;text=Twitter+Friends+Widget+v2'
+			rel='http://www.moretechtips.net/' 
+			title='Twitter Friends & Followers Widget v.20'>
+		   	Retweet
+		</a>
+		<a class='googleplus-frame'
+			rel='http://www.moretechtips.net/'
+			href='#'>
+		</a>
+		<a class="facebook-frame" 
+			rel="http://www.moretechtips.net/" 
+			href="http://www.facebook.com/sharer.php?u=http://www.moretechtips.net/">
+			Share
+		</a>
+	</div>
+</div>
+
+
+<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));</script><script type="text/javascript">try{	var pageTracker = _gat._getTracker("UA-5465067-6"); pageTracker._trackPageview();} catch(err){}</script>
+<script type="text/javascript" src="demo.js"></script>
+</body>
+</html>
