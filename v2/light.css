@@ -121,6 +121,9 @@ div.tfw-users{
 	background-color:#fefefe;
 	padding:4px 0 0 4px;
 	font-family: lucida,tahoma,helvetica,arial,sans-serif !important;
+	
+	display:-moz-inline-stack;
+	display:inline-block;
 }
 /* ul list of users */
 div.tfw-users a{
