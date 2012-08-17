@@ -123,7 +123,7 @@ div.tfw-users{
 	font-family: lucida,tahoma,helvetica,arial,sans-serif !important;
 	
 	display:-moz-inline-stack;
-	display:inline-block;
+	display:block;
 }
 /* ul list of users */
 div.tfw-users a{

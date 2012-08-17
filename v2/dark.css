@@ -122,7 +122,7 @@ div.tfw-users{
 	padding:4px 0 0 4px;
 	font-family: lucida,tahoma,helvetica,arial,sans-serif !important;
 	display:-moz-inline-stack;
-	display:inline-block;
+	display:block;
 
 }
 /* ul list of users */
